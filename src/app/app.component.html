@@ -1,8 +1,8 @@
-<mat-card>
+<mat-card fxLayout="column" fxLayoutGap="10px">
   <mat-card-title>Elizabeth Language Translator</mat-card-title>
   <mat-card-content class="containerX">
     <div class="colorNested box" style="height: auto">
-      <div fxLayout="row" fxLayoutGap="10px">
+      <div >
         <div *ngIf="vm$ | async as vm">
           <h5 fxLayoutAlign="left">Type Your text here</h5>
           <mat-form-field fxLayoutAlign="left">
