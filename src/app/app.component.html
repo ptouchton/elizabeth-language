@@ -1,44 +1,43 @@
 <mat-card fxLayout="column" fxLayoutGap="10px">
   <mat-card-title>Elizabeth Language Translator</mat-card-title>
   <mat-card-content class="containerX">
-    <div class="colorNested box" style="height: auto">
-      <div >
-        <div *ngIf="vm$ | async as vm">
-          <h5 fxLayoutAlign="left">Type Your text here</h5>
-          <mat-form-field fxLayoutAlign="left">
-            <textarea
-              matInput
-              rows="10"
-              cols="25"
-              [(ngModel)]="vm.plainInput"
-              [value]="vm.plainInput"
-              name="plainInput"
-              #plainInput="ngModel"
-              Style="font-size: 16px;"
-            ></textarea>
-          </mat-form-field>
-          <br />
-          <div fxLayoutAlign="left">
-            <button
-              mat-raised-button
-              color="primary"
-              (click)="onChange(vm.plainInput)"
-            >
-              Translate
-            </button>
-            <button
-               style="margin-left: 5px;" 
-               mat-raised-button color="primary"
-              (click)="onClear()">
-              Clear
-            </button>
-          </div>
-          <br />
-          <br />
-          <h5>Translated into Elizabeth Language</h5>
-          <span>{{ vm.translatedOutput }}</span>
-        </div>
+    <div *ngIf="vm$ | async as vm">
+      <h5 fxLayoutAlign="left">Type Your text here</h5>
+      <mat-form-field fxLayoutAlign="left">
+        <textarea
+          matInput
+          cdkAutosizeMinRows="10"
+          cdkAutosizeMaxRows="25"
+          cols="20"
+          [(ngModel)]="vm.plainInput"
+          [value]="vm.plainInput"
+          name="plainInput"
+          #plainInput="ngModel"
+          Style="font-size: 16px;"
+        ></textarea>
+      </mat-form-field>
+      <br />
+      <div fxLayoutAlign="left">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onChange(vm.plainInput)"
+        >
+          Translate
+        </button>
+        <button
+          style="margin-left: 5px"
+          mat-raised-button
+          color="primary"
+          (click)="onClear()"
+        >
+          Clear
+        </button>
       </div>
+      <br />
+      <br />
+      <h5>Translated into Elizabeth Language</h5>
+      <span>{{ vm.translatedOutput }}</span>
     </div>
   </mat-card-content>
 </mat-card>
